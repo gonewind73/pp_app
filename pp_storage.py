@@ -10,15 +10,16 @@ from pp_file import  Filer, FILE_TAG
 import logging
 import shutil
 import os
-import yaml
+
 import time
 import struct
 import threading
 from _thread import start_new_thread
-from pp_link import set_debug, NAT_TYPE, PP_APPID, BroadCastId
+from pp_link import  NAT_TYPE, PP_APPID, BroadCastId
 from pp_control import PPNetApp, PPStation
 from filefolder import FolderInfo, FileInfo, FILE_STATUS
 from pseudo_net import FakeNet
+from logtool import set_debug
  
 class PPStorage(PPNetApp):
     '''
@@ -367,7 +368,7 @@ class PPStorage(PPNetApp):
         pass
     
     
-    def content_response(self,content,peer_id):
+    def content_response(self,content,peer_id): 
         '''
         send node_res to network
         '''
@@ -433,7 +434,7 @@ class PPStorage(PPNetApp):
         cmd = command_string.split(" ")
         if cmd[0] in ["list","node","sync","delete"]:
             if cmd[0]=="list":
-                print(self.list(),self.nodes)
+                print(self.list_content(),self.nodes)
             elif cmd[0]=="node":
                 self.find_node()
                 time.sleep(3)

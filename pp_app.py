@@ -18,8 +18,8 @@ from pp_storage import PPStorage
 class PPAppStation(PPStation):
     def __init__(self,config):
         super().__init__(config) 
-        self.flow = Flow(station=self,config=config.get("flow",{}))
-        self.services.update({"flow":self.flow})
+#         self.flow = Flow(station=self,config=config.get("flow",{}))
+#         self.services.update({"flow":self.flow})
         
         if "services" in self.config:
             service_config = self.config["services"]
@@ -33,11 +33,11 @@ class PPAppStation(PPStation):
 #                 self.file_sheller = FileShellerWithAuth(self)
 #                 self.services.update({"file_shell":self.file_sheller})
             if "storage" in service_config:
-                storage_config = self.config.get("stroage",{})
+                storage_config = self.config.get("storage",{})
                 self.storage = PPStorage(station = self,
                                  root = storage_config.get("storage_root",r"ppstorage"),
                                  storage_net= storage_config.get("storage_net","public"),
-                                 nodes=storage_config.get("nodes",[])) 
+                                 nodes=storage_config.get("nodes",)) 
                 self.services.update({"storage":self.storage})           
 #                 
     def run_command(self, command_string):

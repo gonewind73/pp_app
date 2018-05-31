@@ -14,9 +14,10 @@ import time
 import threading
 
 import sys
-from pp_link import set_debug,PP_APPID,PPMessage
+from pp_link import PP_APPID,PPMessage
 from pp_control import Block, PPConnection
 from pseudo_net import FakeAppNet
+from logtool import set_debug
 
 FILE_TAG = {
           # command
@@ -908,7 +909,7 @@ class Test(unittest.TestCase):
     def pause(self):
         self.stationA.status = False
         logging.info("pause A")
-        print("pause A")
+        print("pause A") 
         
 #     def testFile_buffer(self):
 #         self.filersetup()

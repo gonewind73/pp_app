@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
 
 setup(name='python-ppapp',
-    py_modules = ["pp_file","pp_storage","pp_app"],
+    py_modules = ["pp_file3","pp_storage3","pp_app"],
     entry_points = {
         'console_scripts': ['ppapp=pp_app:run'],
     },

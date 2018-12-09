@@ -16,7 +16,7 @@ setup(name='python-ppapp',
       description='Linux/Windows  Virtual LAN application written in  python',
       long_description=open('README.rst',encoding='utf-8').read(),
       version='1.0.0',
-      install_requires=['python-ppnetwork>=1.0.7'     ],
+      install_requires=['python-ppnetwork>=1.0.7',"PyYAML>=3.12" ,'python-ppvlan',"python-windutil"   ],
       python_requires='>=3',
       platforms=["Linux","Windows"],
       classifiers=[
